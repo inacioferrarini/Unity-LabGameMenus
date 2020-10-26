@@ -26,12 +26,15 @@ namespace LabGameMenus.Scenes {
 		#region Private Properties
 
 		private AsyncOperation loadSceneOperation = null;
+		private bool isSceneLoaded = false;
 
 		#endregion
 
 		#region Unity Lifecycle
 
 		private void Awake() {
+			loadSceneOperation = null;
+			isSceneLoaded = false;
 			GameManager.Instance.Configure(this);
 		}
 
@@ -50,15 +53,18 @@ namespace LabGameMenus.Scenes {
 
 			UpdateProgress(progress);
 
-			if (Mathf.Approximately(progress, 0.9f)) {
+			if (Mathf.Approximately(progress, 0.9f) && !isSceneLoaded) {
+				Debug.Log("SceneLoaderController::SceneLoaded. Will hide progress and show label");
+				isSceneLoaded = true;
 				StartCoroutine(HideProgressAndShowLabel());
+			}
 
-				if (continueLabel.activeSelf && Input.GetButtonDown("Jump")) {
-					if (OnSceneLoadingCompleted != null) {
-						OnSceneLoadingCompleted.Invoke();
-					}
-					loadSceneOperation.allowSceneActivation = true;
+			if (isSceneLoaded && continueLabel.activeSelf && Input.GetButtonDown("Jump")) {
+				Debug.Log("SceneLoaderController::Everything done. Keypressed.");
+				if (OnSceneLoadingCompleted != null) {
+					OnSceneLoadingCompleted.Invoke();
 				}
+				loadSceneOperation.allowSceneActivation = true;
 			}
 		}
 

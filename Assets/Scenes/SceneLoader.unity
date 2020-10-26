@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 1469263582}
   - component: {fileID: 1469263584}
   - component: {fileID: 1469263583}
+  - component: {fileID: 1469263585}
   m_Layer: 5
   m_Name: ContinueLabel
   m_TagString: Untagged
@@ -912,6 +913,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469263581}
   m_CullTransparentMesh: 0
+--- !u!114 &1469263585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469263581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ea2add04bce442ab2d0214002a36d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1.5
 --- !u!1 &1476475925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1134,9 @@ MonoBehaviour:
   progressSlider: {fileID: 762784474}
   loadingLabel: {fileID: 198945043}
   continueLabel: {fileID: 1469263581}
+  OnSceneLoadingCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2007896664
 GameObject:
   m_ObjectHideFlags: 0
