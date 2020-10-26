@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using LabGameMenus.Scenes;
+﻿using LabGameMenus.Scenes;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace LabGameMenus.Management {

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using LabGameMenus.Management;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 namespace LabGameMenus.Scenes {
 
