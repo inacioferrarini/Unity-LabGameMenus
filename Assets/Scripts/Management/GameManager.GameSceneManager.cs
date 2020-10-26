@@ -30,13 +30,13 @@ namespace LabGameMenus.Management {
 			#region Scene Loader
 
 			public void Configure(SceneLoaderController sceneLoaderController) {
-				sceneLoaderController.LoadScenePath = NextScene.GetScenePath();
+				sceneLoaderController.Scene = NextScene;
 				sceneLoaderController.OnSceneLoadingCompleted = new SceneLoaderController.SceneLoadingCompletedEvent();
 				sceneLoaderController.OnSceneLoadingCompleted.AddListener(SceneLoadingCompleted);
 			}
 
-			public void SceneLoadingCompleted() {
-				CurrentScene = NextScene;
+			public void SceneLoadingCompleted(GameScene scene) {
+				CurrentScene = scene;
 				NextScene = GameScene.None;
 				Debug.Log("SceneLoadingCompleted. CurrentScene = " + CurrentScene.ToString() + ", NextScene = " + NextScene.ToString());
 			}

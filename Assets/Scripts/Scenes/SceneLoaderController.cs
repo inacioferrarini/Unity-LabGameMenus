@@ -11,14 +11,14 @@ namespace LabGameMenus.Scenes {
 
 		#region Public Properties
 
-		public string LoadScenePath { get; set; } = null;
+		public GameManager.GameScene Scene { get; set; }
 
 		public GameObject progressSlider;
 		public GameObject loadingLabel;
 		public GameObject continueLabel;
 
 		[System.Serializable]
-		public class SceneLoadingCompletedEvent: UnityEvent { }
+		public class SceneLoadingCompletedEvent: UnityEvent<GameManager.GameScene> { }
 		public SceneLoadingCompletedEvent OnSceneLoadingCompleted;
 
 		#endregion
@@ -39,9 +39,10 @@ namespace LabGameMenus.Scenes {
 		}
 
 		private void Start() {
-			if (LoadScenePath == null) return;
-			Debug.Log("SceneLoaderController::Start(). ScenePath = " + LoadScenePath);
-			loadSceneOperation = SceneManager.LoadSceneAsync(LoadScenePath);
+			string loadScenePath = Scene.GetScenePath();
+			if (loadScenePath == null) return;
+			Debug.Log("SceneLoaderController::Start(). ScenePath = " + loadScenePath);
+			loadSceneOperation = SceneManager.LoadSceneAsync(loadScenePath);
 			loadSceneOperation.allowSceneActivation = false;
 		}
 
@@ -62,7 +63,7 @@ namespace LabGameMenus.Scenes {
 			if (isSceneLoaded && continueLabel.activeSelf && Input.GetButtonDown("Jump")) {
 				Debug.Log("SceneLoaderController::Everything done. Keypressed.");
 				if (OnSceneLoadingCompleted != null) {
-					OnSceneLoadingCompleted.Invoke();
+					OnSceneLoadingCompleted.Invoke(Scene);
 				}
 				loadSceneOperation.allowSceneActivation = true;
 			}
