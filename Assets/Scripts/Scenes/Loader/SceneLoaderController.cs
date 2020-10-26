@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace LabGameMenus.Scenes {
+namespace LabGameMenus.Scenes.Loader {
 
 	public class SceneLoaderController: MonoBehaviour {
 

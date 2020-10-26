@@ -1,4 +1,4 @@
-﻿using LabGameMenus.Scenes;
+﻿using LabGameMenus.Scenes.Loader;
 using UnityEngine;
 
 namespace LabGameMenus.Management {

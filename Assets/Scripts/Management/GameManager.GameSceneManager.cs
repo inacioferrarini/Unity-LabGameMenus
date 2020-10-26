@@ -1,4 +1,4 @@
-﻿using LabGameMenus.Scenes;
+﻿using LabGameMenus.Scenes.Loader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,7 +46,11 @@ namespace LabGameMenus.Management {
 			#region Public Methods
 
 			public void LoadFirstScene() {
-				NextScene = GameScene.GameScene;
+				LoadScene(GameScene.GameScene);
+			}
+
+			public void LoadScene(GameScene scene) {
+				NextScene = scene;
 				SceneManager.LoadSceneAsync(GameScene.SceneLoader.GetScenePath());
 			}
 
