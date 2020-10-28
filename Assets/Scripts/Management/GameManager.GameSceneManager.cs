@@ -9,11 +9,16 @@ namespace LabGameMenus.Management {
 		#region Public Enums
 
 		public enum GameScene {
-			None,
+			// Games
 			GameScene,
+			// Loader
+			SceneLoader,
+			// Menu
 			LoadGameScene,
 			MenuScene,
-			SceneLoader
+			OverlayMenuScene,
+			// Else
+			None
 		};
 
 		#endregion
@@ -67,16 +72,19 @@ namespace LabGameMenus.Management {
 
 			switch (gameScene) {
 				case GameManager.GameScene.GameScene:
-					scenePath = "Scenes/GameScene";
-					break;
-				case GameManager.GameScene.LoadGameScene:
-					scenePath = "Scenes/LoadGameScene";
-					break;
-				case GameManager.GameScene.MenuScene:
-					scenePath = "Scenes/MenuScene";
+					scenePath = "Scenes/Game/GameScene";
 					break;
 				case GameManager.GameScene.SceneLoader:
-					scenePath = "Scenes/SceneLoader";
+					scenePath = "Scenes/Loader/SceneLoader";
+					break;
+				case GameManager.GameScene.LoadGameScene:
+					scenePath = "Scenes/Menu/LoadGameScene";
+					break;
+				case GameManager.GameScene.MenuScene:
+					scenePath = "Scenes/Menu/MenuScene";
+					break;
+				case GameManager.GameScene.OverlayMenuScene:
+					scenePath = "Scenes/Menu/MenuScene";
 					break;
 			}
 
