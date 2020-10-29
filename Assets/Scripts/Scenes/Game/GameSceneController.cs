@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using LabGameMenus.Management;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-using LabGameMenus.Management;
 
 namespace LabGameMenus.Scenes {
 
@@ -25,7 +22,7 @@ namespace LabGameMenus.Scenes {
 		}
 
 		public void HandleShowOverlayMenuAction() {
-			Debug.Log("Show Overlay Menu");
+			GameManager.Instance.PauseGame();
 		}
 
 		#endregion

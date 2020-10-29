@@ -59,6 +59,18 @@ namespace LabGameMenus.Management {
 				LoadScene(GameScene.GameScene);
 			}
 
+			public void ShowPauseScene() {
+				SceneManager.LoadSceneAsync(NonGameScene.OverlayMenuScene.GetScenePath(), LoadSceneMode.Additive);
+			}
+
+			public void HidePauseScene() {
+				SceneManager.UnloadSceneAsync(NonGameScene.OverlayMenuScene.GetScenePath());
+			}
+
+			#endregion
+
+			#region Generic Methods
+
 			public void LoadScene(GameScene scene) {
 				NextScene = scene;
 				SceneManager.LoadSceneAsync(NonGameScene.SceneLoader.GetScenePath());
@@ -102,7 +114,7 @@ namespace LabGameMenus.Management {
 					scenePath = "Scenes/Menu/MenuScene";
 					break;
 				case GameManager.NonGameScene.OverlayMenuScene:
-					scenePath = "Scenes/Menu/MenuScene";
+					scenePath = "Scenes/Menu/OverlayMenuScene";
 					break;
 			}
 

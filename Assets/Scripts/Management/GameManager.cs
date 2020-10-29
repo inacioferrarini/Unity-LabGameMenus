@@ -58,11 +58,21 @@ namespace LabGameMenus.Management {
 
 		#endregion
 
-		#region Public Methods
+		#region Public Methods - Game Lifecycle
 
 		public void PlayerDied() {
 			// TODO: Updage game status
 			gameSceneManager.LoadScene(NonGameScene.MenuScene);
+		}
+
+		public void PauseGame() {
+			// TODO: Updage game status
+			gameSceneManager.ShowPauseScene();
+		}
+
+		public void ResumeGame() {
+			// TODO: Updage game status
+			gameSceneManager.HidePauseScene();
 		}
 
 		#endregion
