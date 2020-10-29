@@ -12,8 +12,7 @@ namespace LabGameMenus.Scenes.Menu {
 		}
 
 		public void HandleQuiteGameAction() {
-			//GameManager.Instance.NewGame();
-			Debug.Log("Quit Game");
+			GameManager.Instance.QuitGame();
 		}
 
 		#endregion
