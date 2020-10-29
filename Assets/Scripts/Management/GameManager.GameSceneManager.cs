@@ -11,6 +11,11 @@ namespace LabGameMenus.Management {
 		public enum GameScene {
 			// Games
 			GameScene,
+			// Else
+			None
+		};
+
+		public enum NonGameScene {
 			// Loader
 			SceneLoader,
 			// Menu
@@ -19,7 +24,7 @@ namespace LabGameMenus.Management {
 			OverlayMenuScene,
 			// Else
 			None
-		};
+		}
 
 		#endregion
 
@@ -56,7 +61,11 @@ namespace LabGameMenus.Management {
 
 			public void LoadScene(GameScene scene) {
 				NextScene = scene;
-				SceneManager.LoadSceneAsync(GameScene.SceneLoader.GetScenePath());
+				SceneManager.LoadSceneAsync(NonGameScene.SceneLoader.GetScenePath());
+			}
+
+			public void LoadScene(NonGameScene scene) {
+				SceneManager.LoadSceneAsync(scene.GetScenePath());
 			}
 
 			#endregion
@@ -74,16 +83,25 @@ namespace LabGameMenus.Management {
 				case GameManager.GameScene.GameScene:
 					scenePath = "Scenes/Game/GameScene";
 					break;
-				case GameManager.GameScene.SceneLoader:
+			}
+
+			return scenePath;
+		}
+
+		public static string GetScenePath(this GameManager.NonGameScene gameScene) {
+			string scenePath = null;
+
+			switch (gameScene) {
+				case GameManager.NonGameScene.SceneLoader:
 					scenePath = "Scenes/Loader/SceneLoader";
 					break;
-				case GameManager.GameScene.LoadGameScene:
+				case GameManager.NonGameScene.LoadGameScene:
 					scenePath = "Scenes/Menu/LoadGameScene";
 					break;
-				case GameManager.GameScene.MenuScene:
+				case GameManager.NonGameScene.MenuScene:
 					scenePath = "Scenes/Menu/MenuScene";
 					break;
-				case GameManager.GameScene.OverlayMenuScene:
+				case GameManager.NonGameScene.OverlayMenuScene:
 					scenePath = "Scenes/Menu/MenuScene";
 					break;
 			}

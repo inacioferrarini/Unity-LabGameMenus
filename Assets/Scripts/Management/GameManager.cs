@@ -33,9 +33,10 @@ namespace LabGameMenus.Management {
 
 		#endregion
 
-		#region Public Methods
+		#region Public Methods - Menu Interaction
 
 		public void NewGame() {
+			// TODO: Updage game status
 			gameSceneManager.LoadFirstScene();
 		}
 
@@ -47,8 +48,21 @@ namespace LabGameMenus.Management {
 			Debug.Log("QUIT GAME");
 		}
 
+		#endregion
+
+		#region Public Methods - Scene Loader
+
 		public void Configure(SceneLoaderController sceneLoaderController) {
 			gameSceneManager.Configure(sceneLoaderController);
+		}
+
+		#endregion
+
+		#region Public Methods
+
+		public void PlayerDied() {
+			// TODO: Updage game status
+			gameSceneManager.LoadScene(NonGameScene.MenuScene);
 		}
 
 		#endregion
