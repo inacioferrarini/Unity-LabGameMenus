@@ -67,7 +67,7 @@ namespace LabGameMenus.Management {
 
 		public void PlayerDied() {
 			// TODO: Updage game status
-			gameSceneManager.LoadScene(NonGameScene.MenuScene);
+			gameSceneManager.LoadMainMenu();
 		}
 
 		public void PauseGame() {
@@ -78,6 +78,14 @@ namespace LabGameMenus.Management {
 		public void ResumeGame() {
 			// TODO: Updage game status
 			gameSceneManager.HidePauseScene();
+		}
+
+		public void ShowSettings() {
+			gameSceneManager.ShowSettingsScene();
+		}
+
+		public void HideSettings() {
+			gameSceneManager.HideSettingsScene();
 		}
 
 		#endregion

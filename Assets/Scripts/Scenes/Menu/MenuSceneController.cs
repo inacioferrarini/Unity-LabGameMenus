@@ -15,6 +15,10 @@ namespace LabGameMenus.Scenes {
 			GameManager.Instance.LoadGame("[Path]");
 		}
 
+		public void HandleShowGameSettingsAction() {
+			GameManager.Instance.ShowSettings();
+		}
+
 		public void HandleQuitAction() {
 			GameManager.Instance.QuitGame();
 		}

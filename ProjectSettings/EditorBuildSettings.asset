@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/OverlayMenuScene.unity
     guid: c8297ae1250cf45eaadcb119f20cb257
+  - enabled: 1
+    path: Assets/Scenes/Menu/SettingsScene.unity
+    guid: 314b03c5eebf740ddb871c691574643b
   m_configObjects: {}
