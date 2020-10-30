@@ -12,7 +12,7 @@ namespace LabGameMenus.Scenes.Menu {
 		}
 
 		public void HandleQuiteGameAction() {
-			GameManager.Instance.QuitGame();
+			GameManager.Instance.QuitToMainMenu();
 		}
 
 		#endregion

@@ -44,6 +44,10 @@ namespace LabGameMenus.Management {
 			Debug.Log("LOAD GAME: " + saveGameFilePath);
 		}
 
+		public void QuitToMainMenu() {
+			gameSceneManager.LoadMainMenu();
+		}
+
 		public void QuitGame() {
 			Application.Quit();
 			Debug.Log("QUIT GAME");

@@ -59,6 +59,10 @@ namespace LabGameMenus.Management {
 				LoadScene(GameScene.GameScene);
 			}
 
+			public void LoadMainMenu() {
+				LoadScene(NonGameScene.MenuScene);
+			}
+
 			public void ShowPauseScene() {
 				SceneManager.LoadSceneAsync(NonGameScene.OverlayMenuScene.GetScenePath(), LoadSceneMode.Additive);
 			}

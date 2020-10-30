@@ -15,6 +15,6 @@ GameScene -> [Show Menu]: Show Overlay Menu.
 TODO LoadGameScene ->
 
 Overlay Menu -> [Resume Games]: Unloads Overlay Menu (returns to Scene).
-TODO Overlay Menu -> [Quit Game]: Returns to MenuScene.
+Overlay Menu -> [Quit Game]: Returns to MenuScene.
 
 Unity Version: 2020.1.4f1 Personal.
