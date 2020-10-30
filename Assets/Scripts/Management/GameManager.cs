@@ -45,6 +45,7 @@ namespace LabGameMenus.Management {
 		}
 
 		public void QuitGame() {
+			Application.Quit();
 			Debug.Log("QUIT GAME");
 		}
 
